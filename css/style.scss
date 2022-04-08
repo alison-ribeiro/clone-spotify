@@ -1,0 +1,140 @@
+@import "fonts";
+
+$color-dark: #000;
+$color-light: #fff;
+$color-main: #D83519;
+$bg-main: #ffcdd2;
+$bg-section:rgb(41, 65, 171);
+$text-section:#1ed760;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'gotham-Bold', sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+#nav-bar{
+    background-color: $color-dark;
+    display: flex;
+    padding: 13px;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    #logo{
+        display: flex;
+        color: $color-light;
+        font-size: 28px;
+        text-align: center;
+        align-items: center;
+        span{
+            font-size: 18px;
+            margin: 4px 0 0 4px;
+        }
+    }
+    #menu-itens{
+        display: flex;
+        align-items: center;
+        #profile{
+            border: 2px solid $color-light;
+            border-radius: 50%;
+            padding: 5px;
+            .bi-person-fill{ 
+                color: $color-light;    
+                font-size: 22px;
+                
+            }
+        }
+        #menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 23px;
+            height: 18px;
+            margin-left: 10px;
+            .menu-bar{
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+@mixin  btn ($bg,$color){
+    color: $color;
+    background-color: $bg;
+    padding: 15px 25px ;
+    border-radius: 20px ;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 15px 0 ;
+    font-family: 'gotham-Bold';
+}
+
+#main-container{
+    color: $color-main;
+    background-color: $bg-main;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h1{
+        margin-top: 230px;
+        letter-spacing: -1px;
+        line-height: 40px;
+        font-size: 34px;
+    } 
+    
+    p{
+        font-size: 11px;
+        font-family: 'gotham-Light';
+        max-width: 85%;
+        font-weight: bold;
+        margin-top: 18px;
+        margin: 30px 0;
+    }
+    .btn{
+        @include btn($bg:$color-main,$color:$color-light);
+    }
+}
+
+#section-container{
+    height: 73vh;
+    background-image: url(/img/bg-section.svg);
+    background-position: 65% 54%;
+    background-size:  auto 177%;
+    background-color: $bg-section;
+    color: $text-section;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    
+    #article{
+        h2{
+            margin-top: 150px;
+            font-size: 28px;
+            letter-spacing: -2px;
+        }
+        p{
+            font-family: gotham-Light;
+            font-size: 18px;
+            line-height: 25px;
+            font-weight: bold;
+            margin: 35px 0 50px;
+        }
+        a{
+            @include btn($bg:$text-section,$color:$bg-section);
+        }
+    }
+}
+
+
+
+
+footer{
+    height: 100vh;
+    background-color: #000;
+}
