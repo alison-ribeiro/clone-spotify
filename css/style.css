@@ -20,6 +20,12 @@
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+html, body {
+  height: 100%;
 }
 
 #nav-bar {
@@ -100,7 +106,6 @@
 #main-container {
   color: #D83519;
   background-color: #ffcdd2;
-  height: 95vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,7 +120,7 @@
 }
 
 #main-container h1 {
-  margin-top: 230px;
+  margin-top: 220px;
   letter-spacing: -1px;
   line-height: 40px;
   font-size: 34px;
@@ -127,7 +132,7 @@
   max-width: 85%;
   font-weight: bold;
   margin-top: 18px;
-  margin: 30px 0;
+  margin-bottom: 220px;
 }
 
 #main-container .btn {
@@ -139,6 +144,12 @@
   font-size: 15px;
   margin: 15px 0;
   font-family: 'gotham-Bold';
+}
+
+#main-container .btn:hover {
+  opacity: .9;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #section-container {
@@ -186,8 +197,102 @@
   font-family: 'gotham-Bold';
 }
 
+#section-container #article a:hover {
+  opacity: .9;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 footer {
-  height: 100vh;
   background-color: #000;
+  color: #fff;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+footer #footer-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer #footer-logo .bi-spotify {
+  font-size: 28px;
+}
+
+footer #footer-logo span {
+  font-size: 18px;
+  margin: 4px 0 0 4px;
+}
+
+footer .footer-itens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 40px !important;
+  margin: auto auto;
+  text-align: center;
+}
+
+footer .footer-itens a {
+  color: #fff;
+  font-family: 'gotham-Light';
+  font-weight: 900;
+  margin: 15px 0;
+}
+
+footer .footer-itens a:hover {
+  color: #1ed760;
+}
+
+footer .footer-itens .header-itens {
+  color: #919496;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+footer #footer-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer #footer-footer .social-itens {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #919496;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15px;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+footer #footer-footer .social-itens:hover {
+  color: #1ed760;
 }
 /*# sourceMappingURL=style.css.map */
