@@ -1,0 +1,1 @@
+Clone simples do front-end do spotify.

@@ -9,30 +9,41 @@ $text-section:#1ed760;
 $footer-color: #919496;
 $color-hover:  #1ed760;
 
+
+#desktop{
+    display: none;
+}
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'gotham-Bold', sans-serif;
     text-decoration: none;
     box-sizing: border-box;
-    transition: .2s;
+    transition: .3s;
+    list-style: none;
 }
 html,body{ height: 100%;}
+.body{
+    overflow: hidden;
+}
+
 #nav-bar{
     background-color: $color-dark;
     display: flex;
-    padding: 13px;
+    padding: .7rem 2rem;
     justify-content: space-between;
     text-align: center;
     align-items: center;
+    cursor: pointer;
     #logo{
         display: flex;
         color: $color-light;
-        font-size: 28px;
+        font-size: 2rem;
         text-align: center;
         align-items: center;
         span{
-            font-size: 18px;
+            font-size: 1rem;
             margin: 4px 0 0 4px;
         }
     }
@@ -40,12 +51,12 @@ html,body{ height: 100%;}
         display: flex;
         align-items: center;
         #profile{
-            border: 2px solid $color-light;
+            border: 3px solid $color-light;
             border-radius: 50%;
             padding: 5px;
             .bi-person-fill{ 
                 color: $color-light;    
-                font-size: 22px;
+                font-size: 1.2rem;
                 
             }
         }
@@ -53,8 +64,8 @@ html,body{ height: 100%;}
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 23px;
-            height: 18px;
+            width: 1.3rem;
+            height: 1rem;
             margin-left: 10px;
             .menu-bar{
                 width: 100%;
@@ -65,15 +76,93 @@ html,body{ height: 100%;}
         }
     }
 }
+
+
+.bg{
+    background-color: $color-dark;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: .7;
+    z-index: 10;
+}
+.hide{
+    transform:  translate3d(40rem,0,0);
+    transition: .7s;
+}
+
+.menu-mobile{
+    background-color: $color-dark;
+    width: 65%;
+    height: 102vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 11;
+    padding: 2.3rem;
+    color: $color-light;
+    
+    #bar{
+        max-width: 7%;
+        margin: 2.3rem 1rem;
+    }
+
+    li{
+        padding: .8rem;
+    }
+    a{
+        color: $color-light;
+        font-size: 1.8rem;
+        &:hover{
+            color: #1ed760;
+          }
+    }
+    .close{
+        
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        .bi-x-lg{
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            &:hover{
+                color: #1ed760;
+              }
+        }
+    }
+    .mobile-itens{
+        color: #d9dadc;
+        font-family: 'gotham-Light';
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    #logo-mobile{
+        margin: 10rem 1rem;
+        display: flex;
+        align-items: center;
+        .bi-spotify{
+            font-size: 2rem;
+            margin-right: .3rem;
+        }
+        span{
+            font-size: .9rem;
+        }
+    }
+
+}
+
 @mixin  btn ($bg,$color){
     color: $color;
     background-color: $bg;
-    padding: 15px 25px ;
-    border-radius: 20px ;
+    padding: .8rem 1.5rem ;
+    border-radius: 30px ;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 1rem;
     margin: 15px 0 ;
     font-family: 'gotham-Bold';
+    
 }
 
 #main-container{
@@ -86,12 +175,12 @@ html,body{ height: 100%;}
     h1{
         margin-top: 220px;
         letter-spacing: -1px;
-        line-height: 40px;
-        font-size: 34px;
+        line-height: 3rem;
+        font-size: 2.2rem;
     } 
     
     p{
-        font-size: 11px;
+        font-size: .7rem;
         font-family: 'gotham-Light';
         max-width: 85%;
         font-weight: bold;
@@ -108,7 +197,6 @@ html,body{ height: 100%;}
 }
 
 #section-container{
-    height: 73vh;
     background-image: url(/img/bg-section.svg);
     background-position: 65% 54%;
     background-size:  auto 177%;
@@ -118,24 +206,28 @@ html,body{ height: 100%;}
     flex-direction: column;
     text-align: center;
     align-items: center;
-    
+    padding-bottom: 172px;
     #article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         h2{
             margin-top: 150px;
-            font-size: 28px;
+            font-size: 2.5rem;
             letter-spacing: -2px;
         }
         p{
             font-family: gotham-Light;
-            font-size: 18px;
+            font-size: 1.1rem;
             line-height: 25px;
             font-weight: bold;
             margin: 35px 0 50px;
         }
         a{
             @include btn($bg:$text-section,$color:$bg-section);
+            max-width: 65%;
             &:hover{
-                opacity: .9;
+                opacity: .9; 
                 transform: scale(1.1);
             }
         }
@@ -151,13 +243,13 @@ footer{
         display: flex;
         text-align: center;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 45px;
         justify-content: center;
         .bi-spotify{
-            font-size: 28px;
+            font-size: 2rem;
         }
         span{
-            font-size: 18px;
+            font-size: 1rem;
             margin: 4px 0 0 4px;
         }
     }
@@ -166,7 +258,6 @@ footer{
         display: flex;
         flex-direction: column;
         margin-bottom: 40px !important;
-        margin: auto auto;
         text-align: center;
         a{
             color: $color-light;
@@ -181,6 +272,7 @@ footer{
             color: $footer-color;
             text-transform: uppercase;
             font-weight: bold;
+            margin: 25px 0 8px 0; 
         }
     }
     #footer-footer{
@@ -197,11 +289,69 @@ footer{
            justify-content: center;
            align-items: center;
            margin-right: 15px;
-           font-size: 30px;
+           font-size: 1.8rem;
            margin-top: 15px;
+           cursor: pointer;
            &:hover{
             color: #1ed760;
           }
         }
+    }
+}
+
+
+@media (min-width:765px){
+   
+    :root{ 
+        font-size: 25px;
+    }
+    #mobile{
+        display: none !important;
+    }
+    #menu-itens{
+        display: none !important;
+    }
+    #footer {
+        display: flex;
+        position: relative;
+        justify-content: space-around;
+        .footer-itens{
+            margin: 3rem 90px 0 45px;
+            text-align: start;
+            font-size: .6rem;
+        }
+        #footer-logo{
+            position: absolute;
+            left: 48px;
+        }
+        #footer-footer{
+            flex-direction: column;
+        }
+    }
+    .social-itens{
+        i{
+            font-size: 1rem;
+        }
+    }
+    #desktop{
+        display: flex;
+        color: $color-light;
+        li{
+            padding: 0 .8rem;
+            a{
+                color: $color-light;
+                font-size: .8rem;
+                &:hover{
+                    color: $text-section;
+                }
+            }
+        }
+        .itens-desktop{
+            color: $footer-color;
+        }
+        #bar{
+            margin:0 .8rem;
+        }
+        
     }
 }
